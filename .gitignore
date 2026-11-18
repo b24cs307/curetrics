@@ -1,5 +1,6 @@
 node_modules
 dist
 .env
+server/src/generated/prisma
 server/uploads/*
 !server/uploads/.gitkeep
