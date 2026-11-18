@@ -2,6 +2,7 @@
   "name": "curetrics-platform",
   "private": true,
   "workspaces": ["client", "server"],
-  "scripts": {"predev": "node scripts/prepare-prisma.mjs", "dev": "concurrently -k -n api,web -c yellow,cyan \"npm:dev:server\" \"npm:dev:client\"", "dev:server": "npm --workspace server run dev", "dev:client": "npm --workspace client run dev", "build": "npm --workspace client run build && npm --workspace server run build", "db:generate": "npm run predev", "db:migrate": "npm --workspace server run db:migrate", "db:deploy": "npm --workspace server run db:deploy", "db:seed": "npm --workspace server run db:seed"},
+  "allowScripts": {"@prisma/engines": true, "esbuild": true, "prisma": true},
+  "scripts": {"predev": "node scripts/prepare-prisma.mjs", "prebuild": "node scripts/prepare-prisma.mjs", "dev": "concurrently -k -n api,web -c yellow,cyan \"npm:dev:server\" \"npm:dev:client\"", "dev:server": "npm --workspace server run dev", "dev:client": "npm --workspace client run dev", "build": "npm --workspace client run build && npm --workspace server run build", "db:generate": "npm run predev", "db:migrate": "npm --workspace server run db:migrate", "db:deploy": "npm --workspace server run db:deploy", "db:seed": "npm --workspace server run db:seed"},
   "devDependencies": {"concurrently":"^9.1.2"}
 }
